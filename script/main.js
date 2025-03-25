@@ -26,9 +26,21 @@ const fetchData = () => {
     });
 };
 
+// document.addEventListener("DOMContentLoaded", () => {
+//   const audio = document.getElementById("birthdayAudio");
+//   audio.play().catch((error) => console.log("Autoplay failed:", error));
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.getElementById("birthdayAudio");
-  audio.play().catch((error) => console.log("Autoplay failed:", error));
+
+  document.body.addEventListener(
+    "click",
+    () => {
+      audio.play().catch((error) => console.log("Gagal memutar audio:", error));
+    },
+    { once: true }
+  ); // Event hanya berjalan sekali
 });
 
 // Animation Timeline
